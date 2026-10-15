@@ -1,0 +1,334 @@
+<!doctype html>
+<!--
+REPLACE BEFORE SHOWING: brand name, phone, address, hours, prices, photos, staff
+Also: Messenger / Viber links (#), Google Maps embed, customer review, banner text.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Studio – Salon and Barber</title>
+<meta name="description" content="Sample Studio is a placeholder salon and barber studio: haircuts, color, nails and massage. Book a slot on Messenger. Demo design, all details are placeholders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#2A0B3C; --plum-2:#3E1457; --mag:#D6007A; --mag-lt:#FF5CAB;
+  --butter:#FFE97A; --bone:#FBF5EC; --ink:#2A0B3C;
+  --display:"Bowlby One","Arial Black",Impact,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:clamp(16px,5vw,56px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--bone);color:var(--ink);font:400 1.0625rem/1.55 var(--body);padding-bottom:76px;overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mag);outline-offset:3px;box-shadow:0 0 0 6px var(--butter)}
+.dark :focus-visible{outline-color:var(--butter);box-shadow:0 0 0 6px var(--plum)}
+.skip{position:absolute;left:-999px;top:0;background:var(--butter);padding:10px 16px;z-index:100}
+.skip:focus{left:8px;top:8px}
+
+/* banner */
+.demo-banner{background:var(--butter);color:var(--plum);text-align:center;font-size:.8125rem;font-weight:600;padding:6px var(--gut);line-height:1.35}
+
+/* layout */
+.wrap{padding-inline:var(--gut);max-width:1200px;margin-inline:auto}
+.band{padding-block:clamp(56px,9vw,112px)}
+.dark{background:var(--plum);color:var(--bone)}
+.sun{background:var(--butter)}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:.95;margin:0}
+h2{font-size:clamp(2.4rem,9vw,5.5rem);letter-spacing:-.01em;text-wrap:balance}
+.lede{max-width:46ch;margin:18px 0 0;font-size:1.125rem}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 26px;border-radius:999px;font:800 1rem var(--body);text-decoration:none;border:3px solid var(--plum);cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--mag);color:#fff;border-color:var(--mag)}
+.btn-alt{background:transparent;color:var(--bone);border-color:var(--bone)}
+.btn-ink{background:var(--plum);color:var(--butter)}
+
+/* nav */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px}
+.logo{font-family:var(--display);font-size:1.4rem;text-decoration:none;color:var(--bone)}
+.logo span{color:var(--mag-lt)}
+.top nav{display:none;gap:24px}
+.top nav a{font-weight:600;text-decoration:none}
+.top nav a:hover{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:3px}
+@media(min-width:760px){.top nav{display:flex}}
+
+/* hero */
+.hero{padding-bottom:0;overflow:hidden;position:relative}
+.hero-tag{max-width:30ch;margin:8px 0 0;font-size:1.125rem}
+.stack{list-style:none;margin:clamp(24px,5vw,48px) 0 0;padding:0}
+.stack li{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:3px solid var(--bone);padding-block:6px}
+.stack li:last-child{border-bottom:3px solid var(--bone)}
+.stack a{font-family:var(--display);font-size:clamp(3.4rem,17.5vw,12rem);line-height:.88;text-decoration:none;letter-spacing:-.02em;color:var(--bone);display:block}
+.stack a:hover{color:var(--butter)}
+.stack li:nth-child(2) a{color:var(--mag-lt)}
+.stack li:nth-child(2) a:hover{color:var(--butter)}
+.stack li:nth-child(3) a{color:transparent;-webkit-text-stroke:2px var(--bone)}
+.stack li:nth-child(3) a:hover{color:var(--butter);-webkit-text-stroke-color:var(--butter)}
+.stamp{flex:none;transform:rotate(-6deg);background:var(--butter);color:var(--plum);font-weight:800;line-height:1.1;padding:8px 12px;border-radius:12px;font-size:clamp(.75rem,2.6vw,1.1rem);text-align:center}
+.stamp b{display:block;font-family:var(--display);font-weight:400;font-size:1.25em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(24px,4vw,40px)}
+.ticker{margin-top:clamp(36px,6vw,64px);background:var(--mag);color:#fff;overflow:hidden;white-space:nowrap;border-block:3px solid var(--bone)}
+.ticker div{display:inline-block;padding:12px 0;font-family:var(--display);font-size:1.15rem;animation:run 28s linear infinite}
+.ticker span{padding-inline:22px}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* menu */
+.menu-grid{display:grid;gap:clamp(36px,6vw,64px);margin-top:clamp(32px,5vw,56px)}
+@media(min-width:900px){.menu-grid{grid-template-columns:1fr 1fr;column-gap:72px}}
+.group h3{font-size:clamp(1.9rem,6vw,2.8rem);display:inline-block;background:var(--plum);color:var(--butter);padding:8px 16px 6px;border-radius:10px;transform:rotate(-1.5deg);margin-bottom:14px}
+.group:nth-child(even) h3{background:var(--mag);color:#fff;transform:rotate(1.5deg)}
+.group ul{list-style:none;margin:0;padding:0}
+.group li{display:flex;align-items:baseline;gap:8px;padding-block:9px;font-weight:600;font-size:1.125rem}
+.group li::after{content:"";order:2;flex:1;border-bottom:3px dotted currentColor;opacity:.4;min-width:12px;transform:translateY(-4px)}
+.group li .p{order:3;font-weight:800;white-space:nowrap}
+.group li .n{order:1}
+.note{margin-top:32px;font-size:.95rem;max-width:60ch}
+
+/* booking */
+.book{display:grid;gap:36px}
+@media(min-width:900px){.book{grid-template-columns:1fr 1fr;gap:72px;align-items:start}}
+form{display:grid;gap:16px}
+label{font-weight:800;display:grid;gap:6px}
+input,select{font:400 1rem var(--body);min-height:52px;padding:10px 14px;border-radius:14px;border:3px solid var(--plum);background:var(--bone);color:var(--plum);width:100%}
+.row2{display:grid;gap:16px}
+@media(min-width:480px){.row2{grid-template-columns:1fr 1fr}}
+.demo-note{background:var(--plum);color:var(--butter);padding:10px 14px;border-radius:12px;font-weight:600;font-size:.95rem}
+#form-msg{min-height:1.5em;font-weight:800}
+
+/* team */
+.team{display:grid;gap:28px;margin-top:40px;grid-template-columns:1fr}
+@media(min-width:560px){.team{grid-template-columns:repeat(3,1fr)}}
+.frame{aspect-ratio:4/5;border:3px dashed var(--bone);border-radius:999px 999px 18px 18px;display:grid;place-items:center;text-align:center;padding:16px;font-weight:600;color:var(--butter)}
+.person:nth-child(2) .frame{border-radius:18px 18px 999px 999px}
+.person:nth-child(3) .frame{border-radius:40% 60% 20px 20px}
+.person h3{font-size:1.5rem;margin-top:16px}
+.person p{margin:4px 0 0}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(120px,32vw,200px);gap:12px;margin-top:36px}
+.tile{display:grid;place-items:center;text-align:center;padding:10px;border-radius:18px;font-family:var(--display);font-size:clamp(.95rem,3.5vw,1.4rem);line-height:1.05}
+.t1{background:var(--plum);color:var(--butter);grid-row:span 2}
+.t2{background:var(--mag);color:#fff}
+.t3{background:var(--butter);color:var(--plum);border:3px solid var(--plum)}
+.t4{background:var(--plum-2);color:var(--bone);grid-column:span 2}
+.t5{background:var(--bone);color:var(--mag);border:3px solid var(--mag)}
+.t6{background:var(--mag-lt);color:var(--plum)}
+@media(min-width:760px){
+ .gal{grid-template-columns:repeat(4,1fr)}
+ .t4{grid-column:span 2}
+}
+.review{margin-top:40px;border:3px dashed var(--plum);border-radius:18px;padding:28px;font-weight:600}
+
+/* info */
+.info{display:grid;gap:40px}
+@media(min-width:900px){.info{grid-template-columns:1fr 1fr;gap:72px}}
+dl{margin:24px 0 0;display:grid;gap:0}
+dl div{display:flex;justify-content:space-between;gap:16px;padding-block:10px;border-bottom:3px dotted rgba(251,245,236,.35);font-weight:600}
+dd{margin:0;font-weight:800;text-align:right}
+address{font-style:normal;margin-top:20px;font-weight:600;font-size:1.125rem}
+.map{margin-top:20px;aspect-ratio:16/10;border:3px dashed var(--plum);border-radius:18px;display:grid;place-items:center;text-align:center;padding:16px;font-weight:600;background:repeating-linear-gradient(45deg,transparent 0 14px,rgba(42,11,60,.07) 14px 28px)}
+
+footer{padding-block:36px;font-size:.9rem}
+footer p{margin:4px 0}
+
+/* mobile bar */
+.bar{position:fixed;inset:auto 0 0 0;z-index:50;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:var(--plum);border-top:3px solid var(--butter)}
+.bar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;font-weight:800;text-decoration:none;background:var(--butter);color:var(--plum)}
+.bar a.m{background:var(--mag);color:#fff}
+.bar a:focus-visible{outline-color:var(--bone);box-shadow:none}
+@media(min-width:900px){
+ .bar{inset:auto 20px 20px auto;width:360px;border:3px solid var(--butter);border-radius:999px}
+ body{padding-bottom:96px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .ticker div{animation:none}
+ .ticker{white-space:normal}
+ .btn{transition:none}
+ .btn:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-banner" role="note">Sample design by [Your Name] — brand, photos and details are placeholders</div>
+
+<header class="dark hero">
+  <div class="wrap">
+    <div class="top">
+      <a class="logo" href="#top" id="top">Sample<span>Studio</span></a>
+      <nav aria-label="Main">
+        <a href="#prices">Prices</a><a href="#book">Book</a><a href="#team">Team</a><a href="#gallery">Work</a><a href="#visit">Visit</a>
+      </nav>
+    </div>
+    <p class="hero-tag">Salon, barber, nails and massage under one roof. Walk in or message us for a slot.</p>
+    <h1 class="sr" style="position:absolute;left:-999px">Sample Studio: hair, barber, nails and spa price list</h1>
+    <ul class="stack" aria-label="Services with starting prices">
+      <li><a href="#hair">Hair</a><span class="stamp">from<b>₱ [price]</b></span></li>
+      <li><a href="#barber">Barber</a><span class="stamp">from<b>₱ [price]</b></span></li>
+      <li><a href="#nails">Nails</a><span class="stamp">from<b>₱ [price]</b></span></li>
+      <li><a href="#spa">Spa</a><span class="stamp">from<b>₱ [price]</b></span></li>
+    </ul>
+    <div class="hero-cta">
+      <a class="btn btn-main" href="#">Book on Messenger</a>
+      <a class="btn btn-alt" href="#prices">See prices</a>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true"><div>
+    <span>Walk-ins welcome</span><span>Fresh fade</span><span>Color that lasts</span><span>Gel nails</span><span>Hilot and massage</span>
+    <span>Walk-ins welcome</span><span>Fresh fade</span><span>Color that lasts</span><span>Gel nails</span><span>Hilot and massage</span>
+  </div></div>
+</header>
+
+<main id="main">
+<section class="band" id="prices" aria-labelledby="h-prices">
+  <div class="wrap">
+    <h2 id="h-prices">The price list</h2>
+    <p class="lede">Clear prices before you sit down. Final price depends on hair length and service.</p>
+    <div class="menu-grid">
+      <div class="group" id="hair">
+        <h3>Hair</h3>
+        <ul>
+          <li><span class="n">Haircut and style</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Hair color</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Rebond / straightening</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Hair treatment</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Blowdry</span><span class="p">₱ [price]</span></li>
+        </ul>
+      </div>
+      <div class="group" id="barber">
+        <h3>Barber</h3>
+        <ul>
+          <li><span class="n">Fade / classic cut</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Beard trim</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Cut and beard combo</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Hot towel shave</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Kids cut</span><span class="p">₱ [price]</span></li>
+        </ul>
+      </div>
+      <div class="group" id="nails">
+        <h3>Nails</h3>
+        <ul>
+          <li><span class="n">Manicure</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Pedicure</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Gel polish</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Nail art (per nail)</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Soak-off and remove</span><span class="p">₱ [price]</span></li>
+        </ul>
+      </div>
+      <div class="group" id="spa">
+        <h3>Spa and massage</h3>
+        <ul>
+          <li><span class="n">Foot massage (30 min)</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Full body massage (60 min)</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Hilot (60 min)</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Hair and scalp spa</span><span class="p">₱ [price]</span></li>
+          <li><span class="n">Ventosa</span><span class="p">₱ [price]</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Placeholder services and prices. Replace with the studio's real menu.</p>
+  </div>
+</section>
+
+<section class="band sun" id="book" aria-labelledby="h-book">
+  <div class="wrap book">
+    <div>
+      <h2 id="h-book">Book a slot</h2>
+      <p class="lede">Pick a service and a time. We confirm by Messenger or text.</p>
+      <p class="demo-note">Demo form. It does not send anything yet.</p>
+    </div>
+    <form id="demo-form" novalidate>
+      <label for="svc">Service
+        <select id="svc" name="service">
+          <option>Haircut and style</option><option>Hair color</option><option>Fade / classic cut</option>
+          <option>Beard trim</option><option>Manicure</option><option>Pedicure</option><option>Massage</option>
+        </select>
+      </label>
+      <div class="row2">
+        <label for="day">Preferred day<input id="day" name="day" type="date"></label>
+        <label for="time">Preferred time<input id="time" name="time" type="time"></label>
+      </div>
+      <label for="name">Your name<input id="name" name="name" type="text" autocomplete="name"></label>
+      <label for="mobile">Mobile number<input id="mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="09XX XXX XXXX"></label>
+      <button class="btn btn-ink" type="submit">Request this slot</button>
+      <p id="form-msg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section class="band dark" id="team" aria-labelledby="h-team">
+  <div class="wrap">
+    <h2 id="h-team">Meet the crew</h2>
+    <p class="lede">Introduce the people behind the chair. Real faces earn more bookings than logos.</p>
+    <div class="team">
+      <div class="person"><div class="frame">[Your photo here]</div><h3>[Stylist name]</h3><p>Hair color and cuts</p></div>
+      <div class="person"><div class="frame">[Your photo here]</div><h3>[Barber name]</h3><p>Fades and beard work</p></div>
+      <div class="person"><div class="frame">[Your photo here]</div><h3>[Therapist name]</h3><p>Nails and massage</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="gallery" aria-labelledby="h-gal">
+  <div class="wrap">
+    <h2 id="h-gal">Gallery</h2>
+    <p class="lede">Your best cuts, colors and nail sets go here. Square or portrait photos work best.</p>
+    <div class="gal">
+      <div class="tile t1">Add your work here</div>
+      <div class="tile t2">Add your work here</div>
+      <div class="tile t3">Add your work here</div>
+      <div class="tile t4">Add your work here</div>
+      <div class="tile t5">Add your work here</div>
+      <div class="tile t6">Add your work here</div>
+    </div>
+    <div class="review">Add a real customer review here, with their permission. Name and date included.</div>
+  </div>
+</section>
+
+<section class="band dark" id="visit" aria-labelledby="h-visit">
+  <div class="wrap info">
+    <div>
+      <h2 id="h-visit">Opening hours</h2>
+      <dl>
+        <div><dt>Monday to Friday</dt><dd>[00:00] to [00:00]</dd></div>
+        <div><dt>Saturday</dt><dd>[00:00] to [00:00]</dd></div>
+        <div><dt>Sunday</dt><dd>[00:00] to [00:00]</dd></div>
+        <div><dt>Holidays</dt><dd>[Open / closed]</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h2>Find us</h2>
+      <address>[Street, Barangay, City, Province]<br>[Landmark: near ...]</address>
+      <div class="map" style="border-color:var(--bone);color:var(--bone);background:repeating-linear-gradient(45deg,transparent 0 14px,rgba(251,245,236,.08) 14px 28px)">Google Maps goes here</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="sun">
+  <div class="wrap">
+    <p><strong>Sample Studio</strong> is a fictional brand used for a design demo.</p>
+    <p>Phone: +63 000 000 0000 (placeholder)</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Contact">
+  <a href="tel:+630000000000">Call</a>
+  <a class="m" href="#">Messenger</a>
+  <a href="#">Viber</a>
+</nav>
+
+<script>
+document.getElementById('demo-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  document.getElementById('form-msg').textContent='This is a demo form. Nothing was sent.';
+});
+</script>
+</body>
+</html>
