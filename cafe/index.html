@@ -1,0 +1,383 @@
+<!--
+REPLACE BEFORE SHOWING: brand name, phone, address, hours, menu and prices, photos
+Also replace: Messenger/Viber links (#), Google Maps box, "[Your Name]" in the top banner, bracketed facts in the cakes section.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Kitchen &amp; Bakeshop</title>
+<meta name="description" content="Sample design for a neighborhood cafe and bakery: coffee, fresh pandesal and pastries, rice meals, and cakes for order. Brand, photos and details are placeholders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#123524; --forest-2:#1b4a33; --mango:#f5b82e; --chalk:#f4f6f1; --calamansi:#9bcb3c; --ink:#0e2a1d;
+  --muted:#4b5f54; --line:#c9d3c8;
+  --serif:"Young Serif",Georgia,serif; --sans:"Hanken Grotesk",system-ui,sans-serif;
+  --gutter:clamp(16px,5vw,48px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--chalk);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);padding-bottom:72px}
+img,svg{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;margin:0}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--forest);outline-offset:3px;border-radius:4px}
+.top :focus-visible,.hero :focus-visible,.board :focus-visible,.dock :focus-visible,.foot :focus-visible{outline-color:var(--calamansi)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 var(--gutter)}
+.block{padding:clamp(48px,8vw,96px) 0}
+
+/* demo banner */
+.demo-bar{background:var(--mango);color:var(--ink);font-size:.875rem;font-weight:500;text-align:center;padding:8px var(--gutter);line-height:1.35}
+
+/* header */
+.top{background:var(--forest);color:var(--chalk)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;padding-bottom:16px}
+.brand{font-family:var(--serif);font-size:1.25rem;text-decoration:none;line-height:1.1}
+.brand small{display:block;font-family:var(--sans);font-size:.8rem;color:#b9cdbf;margin-top:2px}
+.nav{display:none;gap:24px}
+.nav a{text-decoration:none;font-weight:500;padding:4px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--mango)}
+@media(min-width:760px){.nav{display:flex}}
+
+/* hero */
+.hero{background:var(--forest);color:var(--chalk);padding:clamp(32px,6vw,72px) 0 clamp(56px,8vw,96px)}
+.hero-grid{display:grid;gap:36px;align-items:center}
+@media(min-width:860px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:56px}}
+.hero h1{font-size:clamp(2.5rem,9vw,4.75rem);letter-spacing:-.01em}
+.hero p.lead{font-size:1.2rem;color:#d6e3da;margin-top:20px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border-radius:999px;font:700 1rem var(--sans);text-decoration:none;cursor:pointer;border:2px solid transparent}
+.btn-mango{background:var(--mango);color:var(--ink)}
+.btn-mango:hover{background:#ffc94d}
+.btn-line{background:transparent;color:var(--chalk);border-color:var(--chalk)}
+.btn-line:hover{background:rgba(255,255,255,.1)}
+.btn-dark{background:var(--forest);color:var(--chalk)}
+.btn-dark:hover{background:var(--forest-2)}
+.hero-note{margin-top:20px;font-size:.95rem;color:#b9cdbf}
+
+/* photo placeholder frames */
+.ph{position:relative;border-radius:20px;overflow:hidden;background:var(--forest-2);display:grid;place-items:center;aspect-ratio:4/3;color:var(--chalk)}
+.ph svg{position:absolute;inset:0;width:100%;height:100%}
+.ph span{position:relative;font-weight:700;background:rgba(18,53,36,.85);padding:6px 14px;border-radius:999px;font-size:.9rem}
+.ph-tall{aspect-ratio:4/5}
+.ph-light{background:#dfe8d9;color:var(--ink)}
+.ph-light span{background:rgba(244,246,241,.9)}
+
+/* menu board */
+.menu{background:var(--chalk)}
+.menu h2,.cakes h2,.visit h2{font-size:clamp(2rem,6vw,3.25rem)}
+.menu-intro{display:grid;gap:12px;margin-bottom:28px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 12px;margin:0 calc(var(--gutter) * -1);padding-inline:var(--gutter);scrollbar-width:thin}
+.tab{flex:0 0 auto;min-height:44px;padding:10px 20px;border-radius:999px;border:2px solid var(--forest);background:transparent;color:var(--forest);font:700 1rem var(--sans);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--forest);color:var(--chalk)}
+.tab:hover{background:#e3ebde}
+.tab[aria-selected="true"]:hover{background:var(--forest-2)}
+.board{background:var(--forest);color:var(--chalk);border-radius:6px;padding:clamp(20px,4vw,48px);position:relative;
+  box-shadow:0 0 0 8px var(--chalk),0 0 0 11px var(--forest)}
+.board-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:2px dashed rgba(244,246,241,.35);padding-bottom:14px;margin-bottom:8px;flex-wrap:wrap}
+.board-head h3{font-size:clamp(1.5rem,5vw,2.2rem);color:var(--mango)}
+.board-head p{margin:0;color:#b9cdbf;font-size:.95rem}
+.items{list-style:none;margin:0;padding:0;display:grid;column-gap:56px}
+@media(min-width:900px){.items{grid-template-columns:1fr 1fr}}
+.item{padding:14px 0}
+.row{display:flex;align-items:baseline;gap:8px}
+.row .name{font-weight:700;font-size:1.1rem}
+.row .dots{flex:1;min-width:16px;border-bottom:2px dotted rgba(244,246,241,.5);transform:translateY(-4px)}
+.row .price{font-family:var(--serif);color:var(--mango);white-space:nowrap;font-size:1.1rem}
+.item .desc{margin:2px 0 0;color:#c7d8cc;font-size:.95rem;max-width:44ch}
+.tag{display:inline-block;margin-left:8px;font-size:.78rem;font-weight:700;background:var(--calamansi);color:var(--forest);padding:1px 8px;border-radius:999px;vertical-align:2px}
+.board-foot{margin:20px 0 0;font-size:.9rem;color:#b9cdbf;border-top:2px dashed rgba(244,246,241,.35);padding-top:14px;max-width:none}
+.js .panel[hidden]{display:none}
+.panel{animation:none}
+.js .panel:not([hidden]){animation:rise .35s ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.panel + .panel{margin-top:32px}
+.js .panel + .panel{margin-top:0}
+
+/* gallery */
+.shots{display:grid;gap:16px;margin-top:40px}
+@media(min-width:700px){.shots{grid-template-columns:repeat(3,1fr)}}
+.shots .ph{aspect-ratio:1/1}
+
+/* cakes */
+.cakes{background:var(--mango);color:var(--ink)}
+.cakes-grid{display:grid;gap:40px}
+@media(min-width:900px){.cakes-grid{grid-template-columns:.9fr 1.1fr;gap:64px}}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px 0;border-top:2px solid rgba(14,42,29,.25)}
+.steps li:last-child{border-bottom:2px solid rgba(14,42,29,.25)}
+.steps li::before{content:counter(s);width:40px;height:40px;border-radius:50%;background:var(--forest);color:var(--mango);display:grid;place-items:center;font-family:var(--serif)}
+.steps h3{font-size:1.25rem;margin-bottom:4px}
+.steps p{margin:0}
+.facts{margin:24px 0 0;padding:0;list-style:none;font-weight:500}
+.facts li{padding:4px 0}
+
+/* review placeholder */
+.review{margin-top:0;border:2px dashed var(--line);border-radius:16px;padding:28px;color:var(--muted);background:transparent}
+.review strong{display:block;color:var(--ink);font-family:var(--serif);font-weight:400;font-size:1.25rem;margin-bottom:4px}
+.review p{margin:0}
+
+/* visit */
+.visit-grid{display:grid;gap:40px}
+@media(min-width:900px){.visit-grid{grid-template-columns:1fr 1fr;gap:64px}}
+.hours{width:100%;border-collapse:collapse;margin:20px 0}
+.hours th,.hours td{padding:10px 0;border-bottom:2px dotted var(--line);text-align:left;font-weight:400}
+.hours th{font-weight:700}
+.hours td{text-align:right}
+address{font-style:normal;margin:16px 0}
+.map{aspect-ratio:4/3;border-radius:16px;border:2px dashed var(--forest);background:
+  repeating-linear-gradient(45deg,#e6ede2 0 12px,#dbe5d6 12px 24px);display:grid;place-items:center;text-align:center;padding:16px;color:var(--forest);font-weight:700}
+.contact-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+
+/* footer */
+.foot{background:var(--forest);color:#b9cdbf;padding:32px 0;font-size:.9rem}
+.foot p{margin:0 0 6px}
+
+/* sticky mobile bar */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--forest);box-shadow:0 -2px 12px rgba(0,0,0,.25)}
+.dock a{min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:12px;font-weight:700;text-decoration:none;background:var(--forest-2);color:var(--chalk);border:2px solid transparent}
+.dock a:first-child{background:var(--mango);color:var(--ink)}
+.dock a:hover{border-color:var(--calamansi)}
+@media(min-width:760px){.dock{display:none}body{padding-bottom:0}}
+
+/* order dialog */
+dialog{border:0;border-radius:20px;padding:0;max-width:min(480px,calc(100vw - 32px));background:var(--chalk);color:var(--ink)}
+dialog::backdrop{background:rgba(14,42,29,.7)}
+.dlg{padding:28px}
+.dlg h2{font-size:1.75rem;margin-bottom:12px}
+.dlg-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar" role="note">Sample design by [Your Name] — brand, photos and details are placeholders</div>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top">Sample Kitchen &amp; Bakeshop<small>Cafe and bakery [Neighborhood, City]</small></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#menu">Menu</a><a href="#cakes">Cakes &amp; orders</a><a href="#visit">Visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="site-main">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="h1">Fresh from the oven, since early morning.</h1>
+      <p class="lead">Pandesal still warm, strong kapeng barako, and rice meals for the lunch rush. [One line about your story: family recipes, years open, neighborhood.]</p>
+      <div class="actions">
+        <a class="btn btn-mango" href="#menu">See the menu</a>
+        <button class="btn btn-line" type="button" id="openOrder" aria-haspopup="dialog">Order for pickup</button>
+      </div>
+      <p class="hero-note">Open today [7:00 AM to 8:00 PM] · [Neighborhood, City]</p>
+    </div>
+    <div class="ph ph-tall" role="img" aria-label="Photo placeholder: bakery counter">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="400" height="500" fill="#1b4a33"/>
+        <circle cx="300" cy="120" r="70" fill="#f5b82e" opacity=".9"/>
+        <g fill="#f5b82e"><ellipse cx="120" cy="330" rx="70" ry="38"/><ellipse cx="250" cy="360" rx="80" ry="42"/><ellipse cx="170" cy="410" rx="75" ry="38"/></g>
+        <g fill="#c98a12"><path d="M70 330q50-26 100 0M200 360q50-28 100 0M120 410q50-26 100 0" stroke="#c98a12" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+        <path d="M0 450h400v50H0z" fill="#123524"/>
+        <g fill="#9bcb3c"><circle cx="60" cy="90" r="9"/><circle cx="90" cy="60" r="6"/></g>
+      </svg>
+      <span>Menu photo here</span>
+    </div>
+  </div>
+</section>
+
+<section class="block menu" id="menu" aria-labelledby="menu-h">
+  <div class="wrap">
+    <div class="menu-intro">
+      <h2 id="menu-h">The menu</h2>
+      <p>Prices are placeholders. Ask for today's bake, as some items sell out by noon.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Menu categories">
+      <button class="tab" role="tab" id="t-coffee" aria-controls="p-coffee" aria-selected="true">Coffee</button>
+      <button class="tab" role="tab" id="t-pastries" aria-controls="p-pastries" aria-selected="false" tabindex="-1">Pastries</button>
+      <button class="tab" role="tab" id="t-rice" aria-controls="p-rice" aria-selected="false" tabindex="-1">Rice meals</button>
+      <button class="tab" role="tab" id="t-cakes" aria-controls="p-cakes" aria-selected="false" tabindex="-1">Cakes for orders</button>
+    </div>
+
+    <div class="board">
+      <section class="panel" id="p-coffee" role="tabpanel" aria-labelledby="t-coffee" tabindex="0">
+        <div class="board-head"><h3>Coffee</h3><p>Hot or iced. Add a shot for ₱ [price].</p></div>
+        <ul class="items">
+          <li class="item"><div class="row"><span class="name">Kapeng Barako</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div><p class="desc">Strong local brew, served black or with milk.</p></li>
+          <li class="item"><div class="row"><span class="name">Iced Spanish Latte</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div><p class="desc">Espresso, milk and condensed milk over ice.</p></li>
+          <li class="item"><div class="row"><span class="name">Café Americano</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div></li>
+          <li class="item"><div class="row"><span class="name">Tablea Hot Chocolate</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div><p class="desc">Thick, bittersweet, made from local cacao.</p></li>
+          <li class="item"><div class="row"><span class="name">Calamansi Cooler</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div><p class="desc">Fresh calamansi, honey and soda.</p></li>
+          <li class="item"><div class="row"><span class="name">Iced Coffee Jelly</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div></li>
+        </ul>
+      </section>
+
+      <section class="panel" id="p-pastries" role="tabpanel" aria-labelledby="t-pastries" tabindex="0">
+        <div class="board-head"><h3>Pastries</h3><p>Baked fresh every morning.</p></div>
+        <ul class="items">
+          <li class="item"><div class="row"><span class="name">Pandesal, 6 pcs<span class="tag">Fresh at [6:30 AM]</span></span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div></li>
+          <li class="item"><div class="row"><span class="name">Ensaymada</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div><p class="desc">Buttery, sugar-topped, with queso de bola.</p></li>
+          <li class="item"><div class="row"><span class="name">Ube Cheese Pandesal</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div></li>
+          <li class="item"><div class="row"><span class="name">Pan de Coco</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div><p class="desc">Sweet coconut filling inside soft bread.</p></li>
+          <li class="item"><div class="row"><span class="name">Egg Pie, slice</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div></li>
+          <li class="item"><div class="row"><span class="name">Monay</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div></li>
+        </ul>
+      </section>
+
+      <section class="panel" id="p-rice" role="tabpanel" aria-labelledby="t-rice" tabindex="0">
+        <div class="board-head"><h3>Rice meals</h3><p>Served with garlic rice and a fried egg. Plain rice is ₱ [price].</p></div>
+        <ul class="items">
+          <li class="item"><div class="row"><span class="name">Tapsilog</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div><p class="desc">Marinated beef tapa, garlic rice, egg.</p></li>
+          <li class="item"><div class="row"><span class="name">Longsilog</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div><p class="desc">Sweet longganisa, garlic rice, egg.</p></li>
+          <li class="item"><div class="row"><span class="name">Chicken Adobo Rice</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div></li>
+          <li class="item"><div class="row"><span class="name">Bangsilog</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div><p class="desc">Boneless fried bangus with vinegar dip.</p></li>
+          <li class="item"><div class="row"><span class="name">Tocilog</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div></li>
+          <li class="item"><div class="row"><span class="name">Pork Sisig Rice<span class="tag">Lunch only</span></span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div></li>
+        </ul>
+      </section>
+
+      <section class="panel" id="p-cakes" role="tabpanel" aria-labelledby="t-cakes" tabindex="0">
+        <div class="board-head"><h3>Cakes for orders</h3><p>Order ahead. See how it works below.</p></div>
+        <ul class="items">
+          <li class="item"><div class="row"><span class="name">Ube Cake, 8 in</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div><p class="desc">With ube halaya filling and cream frosting.</p></li>
+          <li class="item"><div class="row"><span class="name">Mango Float, tray</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div><p class="desc">Layers of graham, cream and ripe mango.</p></li>
+          <li class="item"><div class="row"><span class="name">Chocolate Moist Cake, 8 in</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div></li>
+          <li class="item"><div class="row"><span class="name">Brazo de Mercedes</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div></li>
+          <li class="item"><div class="row"><span class="name">Leche Flan, llanera</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div></li>
+          <li class="item"><div class="row"><span class="name">Pandesal or Ensaymada, box of [24]</span><span class="dots" aria-hidden="true"></span><span class="price">₱ [price]</span></div></li>
+        </ul>
+      </section>
+      <p class="board-foot">Prices in Philippine pesos. Items and prices are examples only.</p>
+    </div>
+
+    <div class="shots">
+      <div class="ph ph-light" role="img" aria-label="Photo placeholder: coffee"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="105" r="48" fill="#123524"/><circle cx="100" cy="105" r="36" fill="#f5b82e"/><path d="M148 90q26 0 26 20t-26 20" stroke="#123524" stroke-width="10" fill="none"/></svg><span>Menu photo here</span></div>
+      <div class="ph ph-light" role="img" aria-label="Photo placeholder: pastry"><svg viewBox="0 0 200 200" aria-hidden="true"><ellipse cx="100" cy="110" rx="70" ry="38" fill="#f5b82e"/><path d="M50 110q50-30 100 0" stroke="#c98a12" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="150" cy="60" r="10" fill="#9bcb3c"/></svg><span>Menu photo here</span></div>
+      <div class="ph ph-light" role="img" aria-label="Photo placeholder: rice meal"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="105" r="62" fill="#fff"/><path d="M60 110a40 30 0 0 1 80 0z" fill="#e9eee5"/><circle cx="125" cy="90" r="14" fill="#f5b82e"/><rect x="55" y="120" width="60" height="16" rx="8" fill="#123524"/></svg><span>Menu photo here</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block cakes" id="cakes" aria-labelledby="cakes-h">
+  <div class="wrap cakes-grid">
+    <div>
+      <h2 id="cakes-h">Cakes &amp; bulk orders</h2>
+      <p style="margin-top:16px">Birthdays, handaan, office merienda or a box of pandesal for the whole barangay. Order ahead so we bake it fresh for you.</p>
+      <ul class="facts">
+        <li>Lead time: [2 days] for cakes, [1 day] for 50+ pieces</li>
+        <li>Down payment: [50%] via [GCash / bank transfer]</li>
+        <li>Pickup: [store address] · Delivery: [areas and fee]</li>
+      </ul>
+      <div class="actions"><button class="btn btn-dark" type="button" data-open-order>Start an order</button></div>
+    </div>
+    <ol class="steps">
+      <li><div><h3>Message us</h3><p>Send the date, cake or items, quantity and any dedication text through [Messenger / Viber].</p></div></li>
+      <li><div><h3>Get your quote</h3><p>We reply with the total and confirm the date within [a few hours].</p></div></li>
+      <li><div><h3>Pay the down payment</h3><p>Your slot is reserved once the [50%] down payment is received. Balance is due on pickup or delivery.</p></div></li>
+      <li><div><h3>Pick up or get it delivered</h3><p>Come by at the agreed time, or we deliver within [service area].</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="rev-h">
+  <div class="wrap">
+    <div class="review"><strong id="rev-h">Add a real customer review here</strong><p>Placeholder. Use a genuine review, with the customer's permission, before this page goes live.</p></div>
+  </div>
+</section>
+
+<section class="block visit" id="visit" aria-labelledby="visit-h" style="padding-top:0">
+  <div class="wrap visit-grid">
+    <div>
+      <h2 id="visit-h">Visit us</h2>
+      <table class="hours">
+        <caption class="sr" style="position:absolute;left:-9999px">Opening hours</caption>
+        <tbody>
+          <tr><th scope="row">Monday to Friday</th><td>[7:00 AM – 8:00 PM]</td></tr>
+          <tr><th scope="row">Saturday</th><td>[7:00 AM – 9:00 PM]</td></tr>
+          <tr><th scope="row">Sunday and holidays</th><td>[7:00 AM – 6:00 PM]</td></tr>
+        </tbody>
+      </table>
+      <address>[Street, Barangay, City, Province, ZIP]<br>Near [landmark]</address>
+      <div class="contact-row">
+        <a class="btn btn-dark" href="tel:+630000000000">Call [0000 000 0000]</a>
+        <a class="btn btn-mango" href="#">Message on Messenger</a>
+        <a class="btn btn-mango" href="#">Message on Viber</a>
+      </div>
+    </div>
+    <div class="map" role="img" aria-label="Google Maps placeholder"><span>Google Maps goes here<br>(embed the shop's real location)</span></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Sample Kitchen &amp; Bakeshop is a made-up name for a demo. Brand, photos, prices and details are placeholders.</p>
+    <p>Sample design by [Your Name]</p>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Contact">
+  <a href="tel:+630000000000">Call</a>
+  <a href="#">Messenger</a>
+  <a href="#">Viber</a>
+</nav>
+
+<dialog id="orderDlg" aria-labelledby="dlg-h">
+  <div class="dlg">
+    <h2 id="dlg-h">Order for pickup</h2>
+    <p>Orders go through Messenger or Viber. Send us what you'd like and the time you'll pick up, and we'll confirm.</p>
+    <p><strong>Demo note:</strong> the buttons below are placeholders and don't open a real chat yet.</p>
+    <div class="dlg-actions">
+      <a class="btn btn-mango" href="#">Open Messenger</a>
+      <a class="btn btn-mango" href="#">Open Viber</a>
+      <button class="btn btn-dark" type="button" id="closeOrder">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function show(t,focus){
+    tabs.forEach(function(x){
+      var on=x===t;
+      x.setAttribute('aria-selected',on);
+      x.tabIndex=on?0:-1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden=!on;
+    });
+    if(focus)t.focus();
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){show(t)});
+    t.addEventListener('keydown',function(e){
+      var n=null;
+      if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+      if(e.key==='Home')n=tabs[0];
+      if(e.key==='End')n=tabs[tabs.length-1];
+      if(n){e.preventDefault();show(n,true)}
+    });
+  });
+  show(tabs[0]);
+  var d=document.getElementById('orderDlg');
+  function open(){ if(d.showModal)d.showModal(); else d.setAttribute('open',''); }
+  document.getElementById('openOrder').addEventListener('click',open);
+  [].forEach.call(document.querySelectorAll('[data-open-order]'),function(b){b.addEventListener('click',open)});
+  document.getElementById('closeOrder').addEventListener('click',function(){d.close?d.close():d.removeAttribute('open')});
+  d.addEventListener('click',function(e){if(e.target===d)d.close()});
+})();
+</script>
+</body>
+</html>
