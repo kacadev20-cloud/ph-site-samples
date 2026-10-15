@@ -1,0 +1,348 @@
+<!--
+REPLACE BEFORE SHOWING: brand name, phone, address, hours, products and prices, photos
+Also replace: Messenger/Viber links (#), GCash/bank details, Google Maps box, banner name "[Your Name]".
+This is a sample design. "Sample Workshop & Supply" is a fictional placeholder brand.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Workshop &amp; Supply</title>
+<meta name="description" content="Sample website for a local bike repair and custom-order workshop. Services, prices, catalog and easy ordering through Messenger. Placeholder content only.">
+<meta name="theme-color" content="#1E40B8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@700;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cobalt:#1E40B8;
+  --ink:#0C1B4D;
+  --chalk:#F2F3EF;
+  --paper:#FFFFFF;
+  --orange:#FF6B1A;
+  --orange-ink:#1A1208;
+  --gray:#5E5952;
+  --gray-soft:#D8D4CC;
+  --focus:#FF6B1A;
+  --stencil:"Big Shoulders Stencil Display","Impact","Arial Narrow",sans-serif;
+  --body:"Work Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --gutter:16px;
+  --max:1080px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --chalk:#0F1424; --paper:#171E36; --ink:#DCE4FF; --gray:#B1ADA6; --gray-soft:#2E3555; --cobalt:#3F63E0;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--chalk);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;padding-bottom:76px}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--stencil);font-weight:900;line-height:.95;margin:0;letter-spacing:.01em;text-transform:uppercase}
+h2{font-size:clamp(2.1rem,7vw,3.4rem);margin-bottom:.5rem}
+h3{font-size:1.5rem;font-weight:700}
+p{margin:0 0 1rem;max-width:62ch}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-999px;top:0;background:var(--paper);color:var(--ink);padding:.6rem 1rem;z-index:100}
+.skip:focus{left:var(--gutter);top:var(--gutter)}
+
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.band{padding:56px 0}
+.band-tint{background:var(--paper)}
+.lede{color:var(--gray);font-size:1.0625rem;margin-bottom:1.75rem}
+
+/* banner */
+.banner{background:var(--ink);color:#fff;font-size:.85rem;line-height:1.35;text-align:center;padding:.5rem var(--gutter)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .banner{background:#000;color:#DCE4FF}}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+.brand{font-family:var(--stencil);font-weight:900;font-size:1.35rem;text-transform:uppercase;text-decoration:none;line-height:1}
+.brand span{color:var(--cobalt)}
+.nav{display:none;gap:22px;font-weight:500}
+.nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--orange)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;font:600 1rem var(--body);text-decoration:none;border:2px solid var(--ink);border-radius:4px;cursor:pointer;background:transparent;color:var(--ink)}
+.btn-main{background:var(--orange);border-color:var(--orange);color:var(--orange-ink)}
+.btn-main:hover{background:#ff8040;border-color:#ff8040}
+.btn-line:hover{background:var(--ink);color:var(--chalk)}
+.btn-sm{min-height:44px;padding:0 14px;font-size:.95rem;border-color:var(--cobalt);color:var(--cobalt)}
+.btn-sm:hover{background:var(--cobalt);color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn-sm:hover{color:#fff}}
+
+/* hero */
+.hero{padding:28px 0 44px}
+.hero h1{font-size:clamp(3.6rem,17vw,9.5rem);color:var(--cobalt);margin-bottom:1.1rem}
+.hero h1 b{display:block;font-weight:900;color:var(--ink)}
+.hero p{font-size:1.15rem;max-width:44ch}
+.cta{display:flex;flex-direction:column;gap:12px;margin-top:1.5rem}
+.hero-note{font-size:.95rem;color:var(--gray);margin-top:1rem}
+
+/* price board: the memorable element */
+.board{position:relative;background:var(--cobalt);color:#F4F6FF;border:6px solid var(--ink);border-radius:6px;padding:34px 20px 22px;box-shadow:0 0 0 2px var(--gray-soft)}
+.board::before,.board::after,.board .scr-b,.board .scr-c{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ffa066,var(--orange) 55%,#b8470a);box-shadow:0 1px 0 rgba(0,0,0,.4)}
+.board::before{top:10px;left:10px}
+.board::after{top:10px;right:10px}
+.board .scr-b{bottom:10px;left:10px}
+.board .scr-c{bottom:10px;right:10px}
+.board h2{color:#fff;font-size:clamp(2.2rem,8vw,3.6rem);letter-spacing:.04em;margin-bottom:.25rem}
+.board .sub{color:#C9D5FF;font-size:.95rem;margin-bottom:1.25rem}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:flex;align-items:baseline;gap:8px;padding:12px 0;border-top:1px dashed rgba(255,255,255,.35)}
+.rows .nm{font-family:var(--stencil);font-weight:700;font-size:clamp(1.35rem,5vw,1.9rem);text-transform:uppercase;letter-spacing:.03em;line-height:1.05}
+.rows .dots{flex:1;min-width:14px;border-bottom:3px dotted rgba(255,255,255,.55);transform:translateY(-4px)}
+.rows .pr{font-family:var(--stencil);font-weight:900;font-size:clamp(1.35rem,5vw,1.9rem);white-space:nowrap;color:#fff}
+.rows .ds{flex-basis:100%;order:5;font-size:.9rem;color:#C9D5FF;margin-top:-4px}
+.rows li{flex-wrap:wrap}
+.board .fine{margin:1rem 0 0;font-size:.88rem;color:#C9D5FF;max-width:none}
+.board-grid{display:grid;gap:36px}
+
+/* catalog */
+.shelf{display:grid;grid-template-columns:1fr;gap:28px 18px;margin-top:1.5rem}
+.item{display:flex;flex-direction:column;gap:10px}
+.photo{aspect-ratio:4/3;background:var(--chalk);border:2px dashed var(--gray);border-radius:4px;display:grid;place-items:center;color:var(--gray);font-weight:500;text-align:center;padding:12px;background-image:repeating-linear-gradient(135deg,transparent 0 14px,rgba(94,89,82,.08) 14px 15px)}
+.band-tint .photo{background-color:var(--chalk)}
+.item h3{margin-top:2px}
+.item .pr{font-family:var(--stencil);font-weight:900;font-size:1.5rem;color:var(--cobalt);line-height:1}
+.item p{margin:0;color:var(--gray);font-size:.97rem}
+.item .btn{align-self:flex-start;margin-top:auto}
+
+/* steps */
+.steps{list-style:none;margin:1.75rem 0 0;padding:0;counter-reset:step;display:grid;gap:0;max-width:720px}
+.steps li{counter-increment:step;position:relative;padding:0 0 28px 68px}
+.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:48px;height:48px;border-radius:50%;background:var(--cobalt);color:#fff;font:900 1.6rem/48px var(--stencil);text-align:center}
+.steps li::after{content:"";position:absolute;left:23px;top:54px;bottom:6px;width:2px;background:var(--gray-soft)}
+.steps li:last-child{padding-bottom:0}
+.steps li:last-child::after{display:none}
+.steps h3{margin:4px 0 4px}
+.steps p{margin:0;color:var(--gray)}
+
+/* facts */
+.facts{display:grid;gap:0;margin-top:1.5rem;border-top:3px solid var(--ink)}
+.facts div{padding:16px 0;border-bottom:1px solid var(--gray-soft)}
+.facts dt{font-family:var(--stencil);font-weight:700;font-size:1.5rem;text-transform:uppercase;line-height:1.05}
+.facts dd{margin:4px 0 0;color:var(--gray)}
+
+/* review slot */
+.review{margin-top:2rem;border:2px dashed var(--gray);border-radius:4px;padding:22px;color:var(--gray);max-width:620px}
+.review strong{display:block;color:var(--ink);font-size:1.1rem;margin-bottom:.25rem}
+.review p{margin:0}
+
+/* hours + location */
+.info{display:grid;gap:36px}
+.hours{width:100%;border-collapse:collapse;max-width:420px}
+.hours th,.hours td{text-align:left;padding:10px 0;border-bottom:1px solid var(--gray-soft);font-weight:400}
+.hours th{font-weight:600;padding-right:16px}
+.hours td{text-align:right}
+.map{aspect-ratio:16/10;background:var(--paper);border:2px dashed var(--gray);border-radius:4px;display:grid;place-items:center;text-align:center;color:var(--gray);padding:12px;margin-top:1rem}
+address{font-style:normal;margin-bottom:.5rem}
+
+footer{background:var(--ink);color:#DCE4FF;padding:36px 0;font-size:.95rem}
+footer p{max-width:60ch;margin:0 0 .5rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer{background:#000}}
+
+/* sticky mobile bar */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:8px;padding:8px var(--gutter) calc(8px + env(safe-area-inset-bottom));background:var(--ink);box-shadow:0 -2px 0 var(--orange)}
+.dock a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:4px;font-weight:600;text-decoration:none;background:#233a8f;color:#fff;border:2px solid transparent}
+.dock a.dock-main{background:var(--orange);color:var(--orange-ink)}
+.dock a:focus-visible{outline-color:#fff}
+
+/* one load moment: the board settles in */
+@media (prefers-reduced-motion:no-preference){
+  .board{animation:settle .7s cubic-bezier(.2,.8,.2,1) both .1s}
+  @keyframes settle{from{transform:translateY(14px) rotate(-.6deg);opacity:0}to{transform:none;opacity:1}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@media (min-width:600px){
+  .cta{flex-direction:row}
+  .shelf{grid-template-columns:repeat(2,1fr)}
+  .facts{grid-template-columns:repeat(2,1fr);column-gap:36px}
+}
+@media (min-width:900px){
+  body{padding-bottom:0}
+  .dock{display:none}
+  .nav{display:flex}
+  .band{padding:84px 0}
+  .hero{padding:48px 0 72px}
+  .board{padding:44px 40px 30px}
+  .board-grid{grid-template-columns:1fr 1.1fr;align-items:start;gap:56px}
+  .shelf{grid-template-columns:repeat(3,1fr)}
+  .item.wide{grid-column:span 2}
+  .item.wide .photo{aspect-ratio:2/1}
+  .info{grid-template-columns:1fr 1.2fr;gap:56px}
+}
+@media (max-width:380px){
+  .rows .nm{font-size:1.25rem}
+  .rows .pr{font-size:1.25rem}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="banner" role="note">Sample design by [Your Name] &mdash; brand, photos and details are placeholders</div>
+
+<header class="wrap top">
+  <a class="brand" href="#top" id="top">Sample <span>Workshop</span> &amp; Supply</a>
+  <nav class="nav" aria-label="Main">
+    <a href="#services">Services</a>
+    <a href="#catalog">Catalog</a>
+    <a href="#ordering">How to order</a>
+    <a href="#visit">Visit</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <h1 id="hero-title">Bikes fixed. <b>Custom orders built.</b></h1>
+    <p>[One line about your shop: what you repair, what you make, and where you are.] Send us a message and we will reply with a price and a date.</p>
+    <div class="cta">
+      <a class="btn btn-main" href="#">Message us on Messenger</a>
+      <a class="btn btn-line" href="#services">See services &amp; prices</a>
+    </div>
+    <p class="hero-note">Replies usually within [X hours]. Open [days / hours].</p>
+  </section>
+
+  <section class="band wrap" id="services" aria-labelledby="services-title">
+    <div class="board-grid">
+      <div>
+        <h2 id="services-title" style="color:var(--ink)">What we do, what it costs</h2>
+        <p class="lede">Prices below are starting prices. Send a photo on Messenger and we will confirm the exact amount before any work begins.</p>
+        <a class="btn btn-main" href="#">Ask about a repair</a>
+      </div>
+      <div class="board" role="group" aria-label="Service price board">
+        <span class="scr-b" aria-hidden="true"></span><span class="scr-c" aria-hidden="true"></span>
+        <h2>Price board</h2>
+        <p class="sub">[Update weekly. Starting prices in pesos.]</p>
+        <ul class="rows">
+          <li><span class="nm">Basic tune-up</span><span class="dots" aria-hidden="true"></span><span class="pr">₱ [price]</span><span class="ds">[Brakes, gears, chain, tire pressure, safety check]</span></li>
+          <li><span class="nm">Flat tire fix</span><span class="dots" aria-hidden="true"></span><span class="pr">₱ [price]</span><span class="ds">[Patch or new tube, per wheel]</span></li>
+          <li><span class="nm">Parts install</span><span class="dots" aria-hidden="true"></span><span class="pr">₱ [price]</span><span class="ds">[Labor only, parts bought here or brought in]</span></li>
+          <li><span class="nm">Full overhaul</span><span class="dots" aria-hidden="true"></span><span class="pr">₱ [price]</span><span class="ds">[Strip, clean, regrease, rebuild]</span></li>
+          <li><span class="nm">Custom build</span><span class="dots" aria-hidden="true"></span><span class="pr">from ₱ [price]</span><span class="ds">[Made to your size and use. Price after a short chat]</span></li>
+        </ul>
+        <p class="fine">[Add a note: parts are charged separately / rush jobs cost extra.]</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-tint" id="catalog" aria-labelledby="catalog-title">
+    <div class="wrap">
+      <h2 id="catalog-title">Ready and made-to-order</h2>
+      <p class="lede">Tap Ask on Messenger on anything you like. We will tell you what is in stock and how long a custom one takes.</p>
+      <div class="shelf">
+        <article class="item wide">
+          <div class="photo">[Your photo here]</div>
+          <h3>[Custom build name]</h3>
+          <span class="pr">₱ [price]</span>
+          <p>[Short description: size options, colors, lead time.]</p>
+          <a class="btn btn-sm" href="#" aria-label="Ask on Messenger about Custom build name">Ask on Messenger</a>
+        </article>
+        <article class="item">
+          <div class="photo">[Your photo here]</div>
+          <h3>[Item name]</h3>
+          <span class="pr">₱ [price]</span>
+          <p>[One short line.]</p>
+          <a class="btn btn-sm" href="#" aria-label="Ask on Messenger about Item name 2">Ask on Messenger</a>
+        </article>
+        <article class="item">
+          <div class="photo">[Your photo here]</div>
+          <h3>[Item name]</h3>
+          <span class="pr">₱ [price]</span>
+          <p>[One short line.]</p>
+          <a class="btn btn-sm" href="#" aria-label="Ask on Messenger about Item name 3">Ask on Messenger</a>
+        </article>
+        <article class="item">
+          <div class="photo">[Your photo here]</div>
+          <h3>[Item name]</h3>
+          <span class="pr">₱ [price]</span>
+          <p>[One short line.]</p>
+          <a class="btn btn-sm" href="#" aria-label="Ask on Messenger about Item name 4">Ask on Messenger</a>
+        </article>
+        <article class="item">
+          <div class="photo">[Your photo here]</div>
+          <h3>[Item name]</h3>
+          <span class="pr">₱ [price]</span>
+          <p>[One short line.]</p>
+          <a class="btn btn-sm" href="#" aria-label="Ask on Messenger about Item name 5">Ask on Messenger</a>
+        </article>
+        <article class="item">
+          <div class="photo">[Your photo here]</div>
+          <h3>[Item name]</h3>
+          <span class="pr">₱ [price]</span>
+          <p>[One short line.]</p>
+          <a class="btn btn-sm" href="#" aria-label="Ask on Messenger about Item name 6">Ask on Messenger</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band wrap" id="ordering" aria-labelledby="ordering-title">
+    <h2 id="ordering-title">How ordering works</h2>
+    <p class="lede">No forms and no account. Everything happens in your chat.</p>
+    <ol class="steps">
+      <li><h3>Message us</h3><p>Tell us what you need and send a photo or a size. [Facebook Messenger / Viber / WhatsApp]</p></li>
+      <li><h3>We confirm price and lead time</h3><p>You get the full amount and a date in writing, in the same chat.</p></li>
+      <li><h3>Pay the down payment</h3><p>[Down payment %] through GCash or bank transfer. [GCash number / bank details here]</p></li>
+      <li><h3>Pick up or get it delivered</h3><p>Collect at the shop or ask about delivery. [Delivery areas and fee here]</p></li>
+    </ol>
+  </section>
+
+  <section class="band band-tint" aria-labelledby="why-title">
+    <div class="wrap">
+      <h2 id="why-title">Why order from the shop</h2>
+      <dl class="facts">
+        <div><dt>[Years in the trade]</dt><dd>[A real fact about your experience.]</dd></div>
+        <div><dt>[Repair guarantee]</dt><dd>[How long you stand behind the work.]</dd></div>
+        <div><dt>[Parts you stock]</dt><dd>[Brands or part types you keep on hand.]</dd></div>
+        <div><dt>[Turnaround time]</dt><dd>[Typical days for a tune-up or custom order.]</dd></div>
+      </dl>
+      <div class="review" role="note">
+        <strong>Add a real customer review here</strong>
+        <p>[Paste a genuine review with the customer's permission. Leave this empty until you have one.]</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band wrap" id="visit" aria-labelledby="visit-title">
+    <h2 id="visit-title">Visit the shop</h2>
+    <div class="info">
+      <div>
+        <h3>Opening hours</h3>
+        <table class="hours">
+          <tbody>
+            <tr><th scope="row">Monday to Friday</th><td>[0:00 AM &ndash; 0:00 PM]</td></tr>
+            <tr><th scope="row">Saturday</th><td>[0:00 AM &ndash; 0:00 PM]</td></tr>
+            <tr><th scope="row">Sunday</th><td>[Closed / hours]</td></tr>
+            <tr><th scope="row">Holidays</th><td>[Message to confirm]</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3>Find us</h3>
+        <address>[Street, Barangay, City, Province]<br>[Landmark: beside / across from ...]</address>
+        <p>Call <a href="tel:+630000000000">+63 000 000 0000</a> or message us before you come.</p>
+        <div class="map" role="img" aria-label="Placeholder for Google Maps">[Google Maps embed goes here]</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Sample Workshop &amp; Supply</strong> is a fictional placeholder brand.</p>
+    <p>Sample design by [Your Name]. Photos, prices and details are placeholders to be replaced.</p>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Contact shortcuts">
+  <a href="tel:+630000000000">Call</a>
+  <a class="dock-main" href="#">Messenger</a>
+  <a href="#">Viber</a>
+</nav>
+</body>
+</html>
