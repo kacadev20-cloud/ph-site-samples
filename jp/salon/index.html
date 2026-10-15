@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hair salon つむぎ（サンプル）</title>
+<meta name="description" content="マンツーマン美容室のホームページ見本。メニューと料金、スタイリスト紹介、Web予約フォーム。店名・写真・内容は架空です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --linen:#f7f3ee; --white:#fffdfa; --teal:#1f4e4f; --teal-2:#2b6566; --blush:#e7c3b5; --clay:#b9674d;
+  --ink:#1f2b2b; --muted:#5e6b69; --line:#e2d9cf;
+  --mincho:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --gothic:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  --gutter:clamp(16px,5vw,48px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--linen);color:var(--ink);font:400 1rem/1.9 var(--gothic);letter-spacing:.03em;padding-bottom:72px}
+img,svg{max-width:100%;display:block}
+h1,h2,h3{word-break:auto-phrase;font-family:var(--mincho);font-weight:700;line-height:1.4;margin:0;letter-spacing:.06em}
+p{margin:0 0 1em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gutter)}
+.block{padding:clamp(56px,9vw,104px) 0}
+.eyebrow{display:block;font-size:.78rem;font-weight:700;letter-spacing:.3em;color:var(--clay);margin-bottom:6px}
+.sec-h{font-size:clamp(1.6rem,5vw,2.3rem)}
+
+.demo-bar{background:var(--teal);color:#fff;font-size:.82rem;font-weight:500;text-align:center;padding:7px var(--gutter);line-height:1.5}
+
+.top{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:15}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
+.brand{font-family:var(--mincho);font-size:1.3rem;text-decoration:none;letter-spacing:.1em;line-height:1.2}
+.brand small{display:block;font-family:var(--gothic);font-size:.68rem;letter-spacing:.25em;color:var(--muted)}
+.nav{display:none;gap:26px;font-size:.9rem;align-items:center}
+.nav a{text-decoration:none}
+.nav a:not(.btn):hover{color:var(--clay)}
+@media(min-width:820px){.nav{display:flex}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 26px;border-radius:999px;font:700 .95rem var(--gothic);letter-spacing:.08em;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-2)}
+.btn-ghost{background:transparent;border-color:var(--teal);color:var(--teal)}
+.btn-ghost:hover{background:rgba(31,78,79,.06)}
+.btn-line{background:#06c755;color:#fff}
+.btn-line:hover{background:#05b04b}
+.btn-sm{min-height:40px;padding:8px 18px;font-size:.85rem}
+
+.hero{padding:clamp(32px,6vw,72px) 0 clamp(56px,8vw,96px)}
+.hero-grid{display:grid;gap:36px;align-items:center}
+@media(min-width:860px){.hero-grid{grid-template-columns:1fr 1fr;gap:64px}}
+.hero h1{font-size:clamp(1.6rem,4.4vw,2.6rem);line-height:1.6}
+.hero .lead{color:var(--muted);margin-top:20px;max-width:28em}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
+.chips li{font-size:.8rem;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:2px 12px}
+
+.ph{position:relative;overflow:hidden;background:var(--blush);display:grid;place-items:center;aspect-ratio:4/5;border-radius:180px 180px 8px 8px}
+.ph svg{position:absolute;inset:0;width:100%;height:100%}
+.ph span{position:relative;font-size:.8rem;font-weight:700;letter-spacing:.1em;background:rgba(255,253,250,.9);padding:5px 14px;border-radius:999px}
+.ph-sq{aspect-ratio:1/1;border-radius:8px}
+
+/* concept */
+.concept{background:var(--white)}
+.concept-grid{display:grid;gap:20px}
+@media(min-width:760px){.concept-grid{grid-template-columns:repeat(3,1fr);gap:28px}}
+.concept-item{border-top:2px solid var(--teal);padding-top:16px}
+.concept-item .num{font-family:var(--mincho);color:var(--clay);font-size:1.6rem}
+.concept-item h3{font-size:1.15rem;margin:4px 0 6px}
+.concept-item p{font-size:.92rem;color:var(--muted);margin:0}
+
+/* price */
+.price-grid{display:grid;gap:24px;margin-top:28px}
+@media(min-width:860px){.price-grid{grid-template-columns:1fr 1fr;gap:32px}}
+.price-card{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:clamp(20px,3.5vw,32px)}
+.price-card h3{font-size:1.2rem;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:4px}
+.plist{list-style:none;margin:0;padding:0}
+.plist li{display:flex;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.plist li:last-child{border-bottom:0}
+.plist .n{font-weight:500}
+.plist .n small{display:block;font-size:.78rem;color:var(--muted);font-weight:400}
+.plist .d{flex:1;border-bottom:1px dotted #c9bdb0;transform:translateY(-5px);min-width:12px}
+.plist .p{font-family:var(--mincho);font-weight:700;white-space:nowrap}
+.badge{display:inline-block;font-size:.68rem;font-weight:700;background:var(--clay);color:#fff;border-radius:2px;padding:0 7px;margin-left:6px;vertical-align:2px}
+.pnote{font-size:.8rem;color:var(--muted);margin-top:16px}
+
+/* stylist */
+.stylist{background:var(--teal);color:#fff}
+.stylist-grid{display:grid;gap:36px;align-items:center}
+@media(min-width:860px){.stylist-grid{grid-template-columns:.8fr 1.2fr;gap:64px}}
+.stylist .ph{background:var(--teal-2);color:#fff;max-width:360px}
+.stylist .eyebrow{color:var(--blush)}
+.stylist p{color:#d6e5e4}
+.stylist dl{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;margin:18px 0 0;font-size:.92rem}
+.stylist dt{font-weight:700;color:#fff}
+.stylist dd{margin:0;color:#d6e5e4}
+
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}
+@media(min-width:760px){.gallery{grid-template-columns:repeat(4,1fr)}}
+
+/* booking */
+.book{background:var(--white)}
+.book-grid{display:grid;gap:40px}
+@media(min-width:900px){.book-grid{grid-template-columns:.9fr 1.1fr;gap:64px}}
+form{display:grid;gap:16px}
+label{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px}
+label .req{font-size:.7rem;background:var(--clay);color:#fff;border-radius:2px;padding:0 6px;margin-left:6px;vertical-align:2px}
+input,select,textarea{width:100%;min-height:48px;padding:10px 14px;font:inherit;border:1px solid #cfc4b8;border-radius:6px;background:var(--linen);color:var(--ink)}
+textarea{min-height:96px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);outline-offset:1px;background:#fff}
+.two{display:grid;gap:16px}
+@media(min-width:560px){.two{grid-template-columns:1fr 1fr}}
+.form-note{font-size:.8rem;color:var(--muted);margin:0}
+.done{display:none;border:1px solid var(--teal);background:#eef5f4;border-radius:8px;padding:18px;color:var(--teal)}
+.done.show{display:block}
+.other-ways{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+
+/* access */
+.access-grid{display:grid;gap:40px}
+@media(min-width:860px){.access-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px}}
+table{width:100%;border-collapse:collapse;margin:18px 0}
+th,td{padding:11px 0;border-bottom:1px solid var(--line);text-align:left;font-weight:400}
+th{font-weight:700;width:38%}
+.closed{color:var(--clay);font-weight:700}
+.map{align-self:start;aspect-ratio:4/3;border-radius:8px;border:1px dashed var(--teal);background:repeating-linear-gradient(45deg,#efe9e1 0 12px,#e8e0d6 12px 24px);display:grid;place-items:center;text-align:center;padding:16px;font-weight:700;font-size:.9rem;color:var(--teal)}
+
+.review{border:1px dashed #c9bdb0;border-radius:8px;padding:26px;color:var(--muted)}
+.review strong{display:block;color:var(--ink);font-family:var(--mincho);font-size:1.1rem;margin-bottom:4px}
+.review p{margin:0}
+
+.foot{background:var(--ink);color:#a9b4b2;padding:32px 0;font-size:.82rem}
+.foot p{margin:0 0 4px}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--white);border-top:1px solid var(--line);box-shadow:0 -2px 12px rgba(0,0,0,.08)}
+.dock a{min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:700;font-size:.88rem;text-decoration:none;border:1px solid var(--teal);color:var(--teal)}
+.dock a:first-child{background:var(--teal);color:#fff}
+@media(min-width:820px){.dock{display:none}body{padding-bottom:0}}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo-bar" role="note">これはKaca Devが制作したホームページの見本です。店名・写真・料金・スタッフはすべて架空です。</div>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top">hair salon つむぎ<small>PRIVATE HAIR SALON</small></a>
+    <nav class="nav" aria-label="メインメニュー">
+      <a href="#concept">コンセプト</a><a href="#price">メニュー・料金</a><a href="#stylist">スタイリスト</a><a href="#access">アクセス</a>
+      <a class="btn btn-teal btn-sm" href="#book">Web予約</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">MAN-TO-MAN SALON</span>
+      <h1 id="h1">最初から最後まで、<br>ひとりのスタイリストが<br>担当します。</h1>
+      <p class="lead">席はひとつだけ。カウンセリングから仕上げまで、ゆっくり話しながら、毎日のお手入れが楽になる髪をつくります。</p>
+      <div class="actions">
+        <a class="btn btn-teal" href="#book">空き状況を見て予約する</a>
+        <a class="btn btn-ghost" href="#price">料金を見る</a>
+      </div>
+      <ul class="chips"><li>完全予約制</li><li>駅から徒歩2分</li><li>キッズスペースあり</li><li>カード・PayPay可</li></ul>
+    </div>
+    <div class="ph" role="img" aria-label="写真の差し替え位置：サロンの内観">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="400" height="500" fill="#e7c3b5"/>
+        <rect x="120" y="120" width="160" height="210" rx="80" fill="#f7f3ee" stroke="#1f4e4f" stroke-width="6"/>
+        <rect x="150" y="360" width="100" height="60" rx="14" fill="#1f4e4f"/>
+        <rect x="190" y="420" width="20" height="50" fill="#1f4e4f"/>
+        <circle cx="70" cy="90" r="22" fill="#b9674d" opacity=".6"/>
+        <path d="M330 300c-20-60 10-110 40-130" stroke="#2b6566" stroke-width="6" fill="none"/>
+        <ellipse cx="352" cy="200" rx="18" ry="8" fill="#2b6566" transform="rotate(-40 352 200)"/>
+      </svg>
+      <span>サロンの写真に差し替え</span>
+    </div>
+  </div>
+</section>
+
+<section class="block concept" id="concept" aria-labelledby="concept-h">
+  <div class="wrap">
+    <span class="eyebrow">CONCEPT</span>
+    <h2 class="sec-h" id="concept-h" style="margin-bottom:28px">つむぎが大切にしていること</h2>
+    <div class="concept-grid">
+      <div class="concept-item"><span class="num">01</span><h3>マンツーマン</h3><p>途中で担当が変わらないので、細かいご希望も伝わります。</p></div>
+      <div class="concept-item"><span class="num">02</span><h3>髪にやさしい薬剤</h3><p>ダメージを抑えたカラー剤と、髪質改善トリートメントを使っています。</p></div>
+      <div class="concept-item"><span class="num">03</span><h3>おうちで再現できる</h3><p>乾かし方とスタイリングのコツを、その場でお伝えします。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="price" aria-labelledby="price-h">
+  <div class="wrap">
+    <span class="eyebrow">MENU &amp; PRICE</span>
+    <h2 class="sec-h" id="price-h">メニュー・料金</h2>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>カット・カラー</h3>
+        <ul class="plist">
+          <li><span class="n">カット<small>シャンプー・ブロー込み</small></span><span class="d" aria-hidden="true"></span><span class="p">¥4,400</span></li>
+          <li><span class="n">前髪カット</span><span class="d" aria-hidden="true"></span><span class="p">¥1,100</span></li>
+          <li><span class="n">カット＋カラー<span class="badge">人気</span></span><span class="d" aria-hidden="true"></span><span class="p">¥9,900</span></li>
+          <li><span class="n">リタッチカラー<small>根元のみ</small></span><span class="d" aria-hidden="true"></span><span class="p">¥5,500</span></li>
+          <li><span class="n">白髪ぼかしハイライト</span><span class="d" aria-hidden="true"></span><span class="p">¥8,800〜</span></li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h3>パーマ・トリートメント</h3>
+        <ul class="plist">
+          <li><span class="n">カット＋パーマ</span><span class="d" aria-hidden="true"></span><span class="p">¥11,000</span></li>
+          <li><span class="n">縮毛矯正<small>カット込み</small></span><span class="d" aria-hidden="true"></span><span class="p">¥17,600</span></li>
+          <li><span class="n">髪質改善トリートメント<span class="badge">おすすめ</span></span><span class="d" aria-hidden="true"></span><span class="p">¥6,600</span></li>
+          <li><span class="n">ヘッドスパ（20分）</span><span class="d" aria-hidden="true"></span><span class="p">¥3,300</span></li>
+          <li><span class="n">キッズカット<small>小学生まで</small></span><span class="d" aria-hidden="true"></span><span class="p">¥2,750</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="pnote">※ 表示価格はすべて税込です。髪の長さ・量により変わる場合があります。（見本のため架空の料金です）</p>
+  </div>
+</section>
+
+<section class="block stylist" id="stylist" aria-labelledby="stylist-h">
+  <div class="wrap">
+    <div class="stylist-grid">
+      <div class="ph" role="img" aria-label="写真の差し替え位置：スタイリスト">
+        <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="375" fill="#2b6566"/><circle cx="150" cy="150" r="56" fill="#e7c3b5"/><path d="M60 375c0-80 40-130 90-130s90 50 90 130z" fill="#f7f3ee"/><path d="M94 150c0-50 30-80 56-80s56 30 56 80c-20-30-90-30-112 0z" fill="#1f2b2b"/></svg>
+        <span>スタイリストの写真</span>
+      </div>
+      <div>
+        <span class="eyebrow">STYLIST</span>
+        <h2 class="sec-h" id="stylist-h">オーナースタイリスト<br>山田 さくら（仮名）</h2>
+        <p style="margin-top:16px">［ここに自己紹介が入ります。経歴、得意なスタイル、お客様へのひとこと。］</p>
+        <dl>
+          <dt>経歴</dt><dd>美容師歴15年、市内のサロン勤務を経て独立</dd>
+          <dt>得意</dt><dd>ショート・ボブ、白髪ぼかし、髪質改善</dd>
+          <dt>趣味</dt><dd>パン屋めぐり</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="gallery" aria-label="スタイル写真">
+      <div class="ph ph-sq" role="img" aria-label="写真の差し替え位置：スタイル1"><span>スタイル写真</span></div>
+      <div class="ph ph-sq" role="img" aria-label="写真の差し替え位置：スタイル2"><span>スタイル写真</span></div>
+      <div class="ph ph-sq" role="img" aria-label="写真の差し替え位置：スタイル3"><span>スタイル写真</span></div>
+      <div class="ph ph-sq" role="img" aria-label="写真の差し替え位置：スタイル4"><span>スタイル写真</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block book" id="book" aria-labelledby="book-h">
+  <div class="wrap book-grid">
+    <div>
+      <span class="eyebrow">RESERVATION</span>
+      <h2 class="sec-h" id="book-h">ご予約</h2>
+      <p style="margin-top:14px">ご希望の日時とメニューを送っていただくと、確認のご連絡をいたします。お電話・LINEでもご予約いただけます。</p>
+      <p class="form-note">当日のご予約はお電話でお願いします。</p>
+      <div class="other-ways">
+        <a class="btn btn-teal" href="tel:0000000000">電話で予約 000-000-0000</a>
+        <a class="btn btn-line" href="#">LINEで予約</a>
+      </div>
+    </div>
+    <div>
+      <form id="bookForm" novalidate>
+        <div class="two">
+          <div><label for="f-date">ご希望日<span class="req">必須</span></label><input id="f-date" name="date" type="date" required></div>
+          <div><label for="f-time">ご希望時間<span class="req">必須</span></label>
+            <select id="f-time" name="time" required><option value="">選んでください</option><option>10:00</option><option>11:30</option><option>13:00</option><option>14:30</option><option>16:00</option><option>17:30</option></select></div>
+        </div>
+        <div><label for="f-menu">メニュー<span class="req">必須</span></label>
+          <select id="f-menu" name="menu" required><option value="">選んでください</option><option>カット</option><option>カット＋カラー</option><option>リタッチカラー</option><option>カット＋パーマ</option><option>縮毛矯正</option><option>髪質改善トリートメント</option><option>その他・相談したい</option></select></div>
+        <div class="two">
+          <div><label for="f-name">お名前<span class="req">必須</span></label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div><label for="f-tel">電話番号<span class="req">必須</span></label><input id="f-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required></div>
+        </div>
+        <div><label for="f-msg">ご要望など</label><textarea id="f-msg" name="msg" placeholder="例：初めてです／子ども連れです"></textarea></div>
+        <p class="form-note">見本のため、このフォームは送信されません。</p>
+        <button class="btn btn-teal" type="submit">この内容で予約をリクエスト</button>
+        <div class="done" id="done" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="rev-h" style="padding-bottom:0">
+  <div class="wrap"><div class="review"><strong id="rev-h">お客様の声（ここに実際の口コミを掲載）</strong><p>見本のため空欄です。公開前に、ご本人の了承を得た本物の口コミに差し替えます。</p></div></div>
+</section>
+
+<section class="block" id="access" aria-labelledby="access-h">
+  <div class="wrap access-grid">
+    <div>
+      <span class="eyebrow">ACCESS</span>
+      <h2 class="sec-h" id="access-h">営業時間・アクセス</h2>
+      <table>
+        <caption style="position:absolute;left:-9999px">営業時間</caption>
+        <tbody>
+          <tr><th scope="row">営業時間</th><td>10:00〜19:00（最終受付 17:30）</td></tr>
+          <tr><th scope="row">定休日</th><td class="closed">毎週月曜・第3火曜</td></tr>
+          <tr><th scope="row">住所</th><td>〒000-0000 ［都道府県・市区町村・番地］</td></tr>
+          <tr><th scope="row">最寄駅</th><td>［〇〇駅］から徒歩2分</td></tr>
+          <tr><th scope="row">駐車場</th><td>近くにコインパーキングあり</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="map" role="img" aria-label="Googleマップの表示位置"><span>Googleマップを表示<br>（実際のサロンの場所を埋め込みます）</span></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>「hair salon つむぎ」は見本用の架空のサロンです。写真・料金・スタッフ・住所はすべてダミーです。</p>
+    <p>デザイン見本：Kaca Dev</p>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="ご予約">
+  <a href="#book">Web予約</a>
+  <a href="tel:0000000000">電話</a>
+  <a href="#">LINE</a>
+</nav>
+
+<script>
+(function(){
+  var f=document.getElementById('bookForm'),done=document.getElementById('done');
+  var d=document.getElementById('f-date');
+  try{var t=new Date();t.setDate(t.getDate()+1);d.min=t.toISOString().slice(0,10);}catch(e){}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var bad=[].filter.call(f.querySelectorAll('[required]'),function(x){return !x.value.trim()});
+    [].forEach.call(f.querySelectorAll('[required]'),function(x){x.setAttribute('aria-invalid',!x.value.trim())});
+    if(bad.length){done.textContent='必須の項目を入力してください。';done.className='done show';bad[0].focus();return;}
+    done.textContent=f.date.value+' '+f.time.value+'「'+f.menu.value+'」のリクエストを受け付けました（見本のため実際には送信されていません）。本番では、確認のご連絡がサロンから届きます。';
+    done.className='done show';
+  });
+})();
+</script>
+</body>
+</html>
