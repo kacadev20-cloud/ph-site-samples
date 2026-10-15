@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ホームページ見本｜Kaca Dev</title>
+<meta name="description" content="Kaca Devが制作した、小さなお店向けホームページの見本です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#faf7f2;--ink:#22201d;--muted:#665f57;--line:#e3dbd0;--accent:#b9674d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.9 "Zen Kaku Gothic New","Hiragino Sans",system-ui,sans-serif;letter-spacing:.03em}
+.wrap{max-width:860px;margin:0 auto;padding:clamp(40px,8vw,88px) clamp(16px,5vw,40px)}
+h1{font-family:"Zen Old Mincho",serif;font-size:clamp(1.7rem,5vw,2.4rem);line-height:1.4;margin:0 0 12px;letter-spacing:.06em}
+p{margin:0 0 1em;color:var(--muted)}
+.list{display:grid;gap:16px;margin-top:32px}
+@media(min-width:640px){.list{grid-template-columns:1fr 1fr}}
+a.card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px}
+a.card:hover{border-color:var(--accent)}
+a.card:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.card b{display:block;font-family:"Zen Old Mincho",serif;font-size:1.25rem;margin-bottom:4px}
+.card span{font-size:.9rem;color:var(--muted)}
+.card em{display:inline-block;margin-top:12px;font-style:normal;font-weight:700;color:var(--accent);font-size:.9rem}
+small{display:block;margin-top:32px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>小さなお店のための<br>ホームページ見本</h1>
+  <p>Kaca Devが制作した見本です。店名・写真・価格はすべて架空で、実際にはお店の写真・メニュー・地図に差し替えて制作します。スマートフォンでもご覧いただけます。</p>
+  <div class="list">
+    <a class="card" href="kissa/"><b>喫茶店・カフェ</b><span>お品書き、モーニング、営業時間と地図、電話・Instagramボタン</span><em>見本を見る →</em></a>
+    <a class="card" href="salon/"><b>美容室・サロン</b><span>メニューと料金、スタイリスト紹介、Web予約フォーム、LINE予約</span><em>見本を見る →</em></a>
+  </div>
+  <small>Kaca Dev ｜ 小さなお店のホームページ制作</small>
+</div>
+</body>
+</html>
