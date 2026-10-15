@@ -1,0 +1,351 @@
+<!doctype html>
+<!--
+REPLACE BEFORE SHOWING: brand name, phone, address, rates, policies, photos, tours.
+Also replace: banner text, WhatsApp/Messenger links, Google Maps embed, guest review block.
+This is a sample design. "Sample Island Stay" is fictional. No real business, logo or photo is used.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Island Stay</title>
+<meta name="description" content="Sample design of a direct-booking website for a small island homestay in the Philippines. Brand, photos and details are placeholders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sea:#0A2A40; --lagoon:#0F7C86; --lagoon-d:#0A5F68; --foam:#F2F8F7; --sand:#E9DCC0;
+  --sun:#FF6A4D; --ink:#14303F; --mute:#4A6270; --line:#C9DAD8; --white:#fff;
+  --r-s:8px; --r-m:16px; --r-l:28px;
+  --f-head:"Bricolage Grotesque",system-ui,sans-serif; --f-body:"Figtree",system-ui,sans-serif;
+  --gut:clamp(16px,5vw,48px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:12px}
+body{margin:0;background:var(--foam);color:var(--ink);font:400 1.0625rem/1.6 var(--f-body);-webkit-font-smoothing:antialiased;padding-bottom:76px}
+img,svg{max-width:100%;display:block}
+a{color:var(--lagoon-d)}
+h1,h2,h3{font-family:var(--f-head);color:var(--sea);line-height:1.08;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.5rem,9vw,5.2rem);font-weight:800;font-stretch:90%}
+h2{font-size:clamp(1.9rem,5vw,3rem);font-weight:700}
+h3{font-size:1.35rem;font-weight:700}
+p{margin:0 0 1em;max-width:62ch}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1120px,100% - 2*var(--gut));margin-inline:auto}
+.band{padding-block:clamp(56px,9vw,104px)}
+.band-sand{background:var(--sand)}
+.band-sea{background:var(--sea);color:#DCEBEA}
+.band-sea h2,.band-sea h3{color:#fff}
+.lede{font-size:1.2rem;color:var(--mute)}
+.band-sea .lede{color:#B9D3D3}
+.ph{font-style:normal;background:rgba(15,124,134,.12);border-radius:4px;padding:0 .3em}
+.band-sea .ph{background:rgba(255,255,255,.14)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:.7em 1.4em;border-radius:999px;border:2px solid transparent;font:700 1rem var(--f-body);text-decoration:none;cursor:pointer}
+.btn-sun{background:var(--sun);color:#2A0E06}
+.btn-sun:hover{background:#ff7d63}
+.btn-line{border-color:var(--lagoon);color:var(--lagoon-d);background:transparent}
+.btn-line:hover{background:rgba(15,124,134,.1)}
+
+/* demo banner */
+.demo{background:var(--sea);color:#fff;font-size:.875rem;text-align:center;padding:.45em var(--gut);line-height:1.4}
+
+/* nav */
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px}
+.brand{font:800 1.25rem var(--f-head);color:#fff;text-decoration:none}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav ul a{color:#fff;text-decoration:none;font-weight:500}
+.nav ul a:hover{text-decoration:underline}
+@media(max-width:700px){.nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;background:linear-gradient(#0A2A40 0%,#0F5A6C 38%,#2FA3A0 62%,#F6C99A 86%);color:#fff;overflow:hidden;padding-bottom:0}
+.hero-copy{position:relative;z-index:3;padding-top:clamp(28px,6vw,72px);padding-bottom:clamp(210px,34vw,330px)}
+.hero h1{color:#fff;max-width:11ch}
+.hero p.lede{color:#DFF0EE;margin-top:20px;max-width:46ch;font-size:1.25rem}
+.sun{position:absolute;z-index:1;right:12%;bottom:20%;width:clamp(120px,22vw,260px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#FFD9A0 0 40%,var(--sun) 100%);box-shadow:0 0 90px 30px rgba(255,150,100,.45)}
+.waves{position:absolute;inset:auto 0 0 0;z-index:2;height:clamp(150px,22vw,260px)}
+.waves svg{position:absolute;left:0;bottom:0;width:200%;height:100%}
+.w1{animation:drift 38s linear infinite}
+.w2{animation:drift 26s linear infinite reverse}
+.w3{animation:drift 18s linear infinite}
+@keyframes drift{to{transform:translateX(-50%)}}
+
+/* availability panel overlaps the hero */
+.avail-row{position:relative;z-index:5;margin-top:-92px}
+.avail{background:#fff;border-radius:var(--r-l);padding:clamp(18px,3vw,32px);box-shadow:0 24px 60px -20px rgba(10,42,64,.45)}
+.avail h2{font-size:1.5rem;margin-bottom:4px}
+.avail .sub{color:var(--mute);margin-bottom:18px;font-size:.95rem}
+.grid-f{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid-f>*{min-width:0}
+@media(min-width:900px){.grid-f{grid-template-columns:repeat(6,minmax(0,1fr))}.grid-f .c2{grid-column:span 2}}
+label{display:block;font-weight:700;font-size:.9rem;margin-bottom:4px}
+input,select{width:100%;min-height:48px;padding:.6em .8em;border:1.5px solid #8FA8A8;border-radius:var(--r-s);font:inherit;color:var(--ink);background:#fff}
+input:focus-visible,select:focus-visible{outline:3px solid var(--sun);outline-offset:1px;border-color:var(--lagoon)}
+.fine{font-size:.875rem;color:var(--mute);margin:14px 0 0;max-width:none}
+.form-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:18px}
+#formNote{font-weight:700;color:var(--lagoon-d);margin:0}
+.c-full{grid-column:1/-1}
+
+/* direct strip */
+.direct{display:grid;gap:28px;margin-top:36px}
+@media(min-width:800px){.direct{grid-template-columns:1.1fr 1fr 1fr 1fr;gap:36px}}
+.direct div+div{border-left:0}
+@media(min-width:800px){.direct div+div{border-left:1px solid rgba(255,255,255,.2);padding-left:28px}}
+.direct h3{font-size:1.15rem;margin-bottom:6px}
+.direct p{margin:0;font-size:1rem}
+
+/* rooms */
+.room{display:grid;gap:22px;align-items:center;padding-block:34px;border-top:1px solid var(--line)}
+.room:first-of-type{border-top:0}
+@media(min-width:800px){.room{grid-template-columns:1fr 1fr;gap:56px}.room:nth-of-type(even) .art{order:2}}
+.art{aspect-ratio:4/3;border-radius:var(--r-l);overflow:hidden;position:relative;display:grid;place-items:end start}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.art span{position:relative;margin:14px;background:rgba(255,255,255,.9);color:var(--sea);font-weight:700;font-size:.9rem;padding:.3em .8em;border-radius:999px}
+.rate{font:700 1.5rem var(--f-head);color:var(--lagoon-d);margin:8px 0 12px}
+.room ul{padding-left:1.1em;margin:0 0 1em}
+
+/* amenities */
+.amen{columns:1;list-style:none;padding:0;margin:28px 0 0}
+@media(min-width:640px){.amen{columns:2}}
+@media(min-width:960px){.amen{columns:3}}
+.amen li{break-inside:avoid;padding:.55em 0 .55em 1.9em;position:relative;border-bottom:1px solid rgba(10,42,64,.15)}
+.amen li::before{content:"";position:absolute;left:.3em;top:1.05em;width:.6em;height:.6em;border-radius:50%;background:var(--lagoon)}
+
+/* tours */
+.tours{list-style:none;margin:30px 0 0;padding:0}
+.tours li{display:grid;gap:4px 24px;padding:22px 0;border-top:1px solid var(--line)}
+@media(min-width:700px){.tours li{grid-template-columns:1fr auto}.tours .price{grid-row:1/3;grid-column:2;text-align:right}}
+.tours h3{font-size:1.3rem}
+.tours p{margin:0;color:var(--mute)}
+.price{font:700 1.25rem var(--f-head);color:var(--lagoon-d);white-space:nowrap}
+
+/* location */
+.loc{display:grid;gap:36px}
+@media(min-width:900px){.loc{grid-template-columns:1fr 1fr;gap:56px}}
+.map{aspect-ratio:4/3;border:2px dashed var(--lagoon);border-radius:var(--r-l);display:grid;place-items:center;text-align:center;padding:20px;color:var(--lagoon-d);background:repeating-linear-gradient(45deg,rgba(15,124,134,.06) 0 14px,transparent 14px 28px)}
+.steps{padding-left:1.3em;margin:18px 0 0}
+.steps li{padding:.35em 0 .35em .3em}
+
+/* review */
+.review{border:2px dashed #8FA8A8;border-radius:var(--r-l);padding:28px;text-align:center;background:#fff}
+.review h2{font-size:1.6rem;margin-bottom:6px}
+.review p{margin-inline:auto;color:var(--mute)}
+
+footer{padding:36px 0 24px;font-size:.9rem;color:var(--mute)}
+footer p{max-width:none}
+
+/* contact bar */
+.bar{position:fixed;z-index:20;left:0;right:0;bottom:0;background:var(--sea);padding:8px var(--gut);display:flex;gap:8px;justify-content:center;box-shadow:0 -8px 24px rgba(10,42,64,.25)}
+.bar a{flex:1;max-width:220px;display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-weight:700;text-decoration:none;border:2px solid transparent}
+.bar a:hover{background:rgba(255,255,255,.22)}
+.bar a.main{background:var(--sun);color:#2A0E06}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .w1,.w2,.w3{animation:none}
+}
+</style>
+</head>
+<body>
+
+<div class="demo" role="note">Sample design by [Your Name] — brand, photos and details are placeholders</div>
+
+<header class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#top">Sample Island Stay</a>
+      <ul>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#tours">Tours</a></li>
+        <li><a href="#getting-here">Getting here</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap hero-copy" id="top">
+    <h1>Wake up to the tide.</h1>
+    <p class="lede">Three simple rooms, a short walk to the water, and a host who answers your message herself. [One-line description of your stay.]</p>
+    <p><a class="btn btn-sun" href="#check-dates">Check dates</a></p>
+  </div>
+  <div class="waves" aria-hidden="true">
+    <svg class="w1" viewBox="0 0 2400 200" preserveAspectRatio="none"><path fill="#1B8F94" fill-opacity=".55" d="M0 90C150 40 300 40 450 90S750 140 900 90s300-50 450 0 300 50 450 0 300-50 450 0 150 25 150 25V200H0Z"/></svg>
+    <svg class="w2" viewBox="0 0 2400 200" preserveAspectRatio="none"><path fill="#0F7C86" fill-opacity=".75" d="M0 120C200 80 400 80 600 120s400 40 600 0 400-40 600 0 400 40 600 0V200H0Z"/></svg>
+    <svg class="w3" viewBox="0 0 2400 200" preserveAspectRatio="none"><path fill="#F2F8F7" d="M0 160C150 135 300 135 450 160s300 25 450 0 300-25 450 0 300 25 450 0 300-25 450 0 150 12 150 12V200H0Z"/></svg>
+  </div>
+</header>
+
+<main>
+  <div class="wrap avail-row" id="check-dates">
+    <form class="avail" id="inquiry" aria-labelledby="avail-h">
+      <h2 id="avail-h">Check dates</h2>
+      <p class="sub">Send your dates straight to the host. No account, no booking fee.</p>
+      <div class="grid-f">
+        <div class="c2"><label for="cin">Check-in</label><input type="date" id="cin" name="checkin" required></div>
+        <div class="c2"><label for="cout">Check-out</label><input type="date" id="cout" name="checkout" required></div>
+        <div class="c2"><label for="guests">Guests</label>
+          <select id="guests" name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5 or more</option></select></div>
+        <div class="c2 c-full"><label for="nm">Your name</label><input id="nm" name="name" autocomplete="name" required></div>
+        <div class="c2 c-full"><label for="ph">WhatsApp or mobile number</label><input id="ph" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+63 9XX XXX XXXX" required></div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-sun" type="submit">Send my dates</button>
+        <p id="formNote" role="status"></p>
+      </div>
+      <p class="fine"><strong>Demo form.</strong> It does not send anything. The real version would email the host and send a Messenger or WhatsApp notification, and she would reply with availability and the direct rate.</p>
+    </form>
+  </div>
+
+  <section class="band band-sea" aria-labelledby="direct-h" style="margin-top:clamp(56px,9vw,104px)">
+    <div class="wrap">
+      <h2 id="direct-h">Book direct and keep the difference</h2>
+      <p class="lede" style="margin-top:14px">Booking sites take a commission from the host. When you book here, that money stays with the people who look after you. Details below are placeholders for the owner to confirm.</p>
+      <div class="direct">
+        <div><h3>Direct rate</h3><p><span class="ph">[Direct rate, e.g. a set discount off listed prices]</span></p></div>
+        <div><h3>Cancellation</h3><p><span class="ph">[Free cancellation policy: how many days before arrival]</span></p></div>
+        <div><h3>Talk to the host</h3><p>Your messages go to <span class="ph">[host name]</span>, not a call center.</p></div>
+        <div><h3>Pay your way</h3><p><span class="ph">[Accepted payments: GCash, bank transfer, cash on arrival]</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="rooms" aria-labelledby="rooms-h">
+    <div class="wrap">
+      <h2 id="rooms-h">Rooms</h2>
+      <p class="lede" style="margin-top:14px">Three room types. Rates are placeholders.</p>
+
+      <article class="room">
+        <div class="art" role="img" aria-label="Placeholder for a photo of the garden room">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#CFE8E4"/><circle cx="300" cy="90" r="40" fill="#FFB38F"/><path d="M0 210C80 180 140 200 220 190s120-30 180-10V300H0Z" fill="#6DB7B0"/><path d="M0 250C100 225 200 255 400 232V300H0Z" fill="#0F7C86"/></svg>
+          <span>[Your photo here]</span>
+        </div>
+        <div>
+          <h3>Garden room</h3>
+          <p class="rate">₱ [rate] / night</p>
+          <p>A quiet double room opening to the garden. <span class="ph">[Short description]</span></p>
+          <ul><li>Sleeps <span class="ph">[2]</span></li><li>Bed: <span class="ph">[1 double]</span></li><li>Private bathroom: <span class="ph">[yes / no]</span></li></ul>
+          <a class="btn btn-line" href="#check-dates">Check dates</a>
+        </div>
+      </article>
+
+      <article class="room">
+        <div class="art" role="img" aria-label="Placeholder for a photo of the sea view room">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#F8DDBE"/><circle cx="110" cy="120" r="46" fill="#FF6A4D" opacity=".85"/><path d="M0 170C70 150 130 175 200 165s140-30 200-5V300H0Z" fill="#2FA3A0"/><path d="M0 215C100 190 220 225 400 200V300H0Z" fill="#0F7C86"/><path d="M0 260C140 245 260 270 400 252V300H0Z" fill="#0A2A40"/></svg>
+          <span>[Your photo here]</span>
+        </div>
+        <div>
+          <h3>Sea view room</h3>
+          <p class="rate">₱ [rate] / night</p>
+          <p>A brighter room with a balcony facing the water. <span class="ph">[Short description]</span></p>
+          <ul><li>Sleeps <span class="ph">[2 to 3]</span></li><li>Bed: <span class="ph">[1 double + 1 single]</span></li><li>Balcony: <span class="ph">[yes / no]</span></li></ul>
+          <a class="btn btn-line" href="#check-dates">Check dates</a>
+        </div>
+      </article>
+
+      <article class="room">
+        <div class="art" role="img" aria-label="Placeholder for a photo of the family room">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#BFE0E6"/><path d="M0 140L90 90l80 60 90-70 140 80V300H0Z" fill="#8CC7C2"/><path d="M0 200C100 175 200 205 400 185V300H0Z" fill="#E9DCC0"/><path d="M0 250C120 230 260 262 400 240V300H0Z" fill="#0F7C86"/></svg>
+          <span>[Your photo here]</span>
+        </div>
+        <div>
+          <h3>Family room</h3>
+          <p class="rate">₱ [rate] / night</p>
+          <p>Space for the whole group, with a small kitchen corner. <span class="ph">[Short description]</span></p>
+          <ul><li>Sleeps <span class="ph">[4 to 5]</span></li><li>Beds: <span class="ph">[2 doubles]</span></li><li>Kitchenette: <span class="ph">[yes / no]</span></li></ul>
+          <a class="btn btn-line" href="#check-dates">Check dates</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="band band-sand" aria-labelledby="amen-h">
+    <div class="wrap">
+      <h2 id="amen-h">What is included</h2>
+      <ul class="amen">
+        <li>Wi-Fi: <span class="ph">[speed / where it works]</span></li>
+        <li>Aircon in <span class="ph">[which rooms]</span></li>
+        <li>Motorbike rental: <span class="ph">[₱ per day]</span></li>
+        <li>Airport pickup: <span class="ph">[₱ / free]</span></li>
+        <li>Breakfast: <span class="ph">[included / extra]</span></li>
+        <li>Hot water: <span class="ph">[yes / no]</span></li>
+        <li>Check-in and check-out: <span class="ph">[times]</span></li>
+        <li>Drinking water refill: <span class="ph">[yes / no]</span></li>
+        <li>Parking: <span class="ph">[bikes / cars]</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" id="tours" aria-labelledby="tours-h">
+    <div class="wrap">
+      <h2 id="tours-h">Tours and add-ons</h2>
+      <p class="lede" style="margin-top:14px">Add them to your dates and the host arranges everything. Prices are placeholders.</p>
+      <ul class="tours">
+        <li><h3>Island hopping</h3><p><span class="ph">[Duration, stops, what is included, group size]</span></p><span class="price">₱ [price] / person</span></li>
+        <li><h3>Surf lesson</h3><p><span class="ph">[Duration, board and instructor included, skill level]</span></p><span class="price">₱ [price] / person</span></li>
+        <li><h3>Airport transfer</h3><p><span class="ph">[Pickup point, travel time, vehicle]</span></p><span class="price">₱ [price] / trip</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band band-sand" id="getting-here" aria-labelledby="loc-h">
+    <div class="wrap loc">
+      <div>
+        <h2 id="loc-h">Getting here</h2>
+        <p class="lede" style="margin-top:14px">Address: <span class="ph">[Street, barangay, town, province]</span></p>
+        <ol class="steps">
+          <li>Fly to <span class="ph">[nearest airport]</span>.</li>
+          <li>Take <span class="ph">[van / tricycle / ferry]</span> to <span class="ph">[town]</span> (about <span class="ph">[time]</span>, <span class="ph">[₱ fare]</span>).</li>
+          <li>Tell the driver <span class="ph">[landmark]</span>.</li>
+          <li>Message the host when you land, or ask for pickup.</li>
+        </ol>
+      </div>
+      <div class="map" role="img" aria-label="Placeholder for a Google Maps embed">
+        <p style="margin:0"><strong>[Google Maps embed here]</strong><br>Paste the map link for the real address.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="rev-h">
+    <div class="wrap">
+      <div class="review">
+        <h2 id="rev-h">Add a real guest review here</h2>
+        <p>Empty on purpose. Only use words from a real guest who has agreed to share them, with their name and the month they stayed.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <p><strong>Sample Island Stay</strong> is a fictional brand used for a design demo. Phone: <a href="tel:+630000000000">+63 000 000 0000</a>. Address: <span class="ph">[address]</span>.</p>
+    <p>Sample design by [Your Name]. Photos are placeholders; replace them before launch.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Contact the host">
+  <a href="tel:+630000000000">Call</a>
+  <a class="main" href="#">WhatsApp</a>
+  <a href="#">Messenger</a>
+</nav>
+
+<script>
+(function(){
+  var cin=document.getElementById('cin'),cout=document.getElementById('cout'),f=document.getElementById('inquiry'),n=document.getElementById('formNote');
+  var t=new Date();t.setMinutes(t.getMinutes()-t.getTimezoneOffset());
+  var today=t.toISOString().slice(0,10);
+  cin.min=today;cout.min=today;
+  cin.addEventListener('change',function(){
+    if(cin.value){var d=new Date(cin.value);d.setDate(d.getDate()+1);cout.min=d.toISOString().slice(0,10);
+      if(cout.value&&cout.value<=cin.value)cout.value='';}
+  });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    n.textContent='Demo only: nothing was sent. The real form would notify the host.';
+  });
+})();
+</script>
+</body>
+</html>
