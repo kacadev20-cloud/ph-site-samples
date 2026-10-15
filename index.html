@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website samples</title>
+<meta name="description" content="Five sample website designs for small Philippine businesses. Brands and details are placeholders.">
+<style>
+  :root { --bg:#f6f7f9; --ink:#14202b; --muted:#566573; --line:#d9dee4; --accent:#1f5fbf; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#10161c; --ink:#eef2f6; --muted:#a3b0bc; --line:#2a3541; --accent:#7fb0ff; } }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; }
+  main { max-width:44rem; margin:0 auto; padding:2.5rem 1rem 4rem; }
+  h1 { font-size:1.75rem; margin:0 0 .5rem; }
+  p { color:var(--muted); margin:0 0 1.5rem; max-width:60ch; }
+  ul { list-style:none; padding:0; margin:0; border-top:1px solid var(--line); }
+  li { border-bottom:1px solid var(--line); }
+  a.row { display:flex; justify-content:space-between; gap:1rem; padding:1rem .25rem; color:inherit; text-decoration:none; }
+  a.row:hover, a.row:focus-visible { background:rgba(127,127,127,.1); outline:none; }
+  a.row:focus-visible { box-shadow:inset 0 0 0 2px var(--accent); }
+  .name { font-weight:600; }
+  .for { color:var(--muted); font-size:.95rem; }
+  .open { color:var(--accent); white-space:nowrap; align-self:center; }
+  small { display:block; margin-top:2rem; color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Website samples</h1>
+  <p>Five starting designs for small businesses in the Philippines. Each uses a made-up brand and placeholder details. Replace them with the real business's own name, photos, prices and contact info before showing it.</p>
+  <ul>
+    <li><a class="row" href="dental/index.html"><span><span class="name">Dental and clinics</span><br><span class="for">Dental, derma, vet and optical clinics</span></span><span class="open">Open sample</span></a></li>
+    <li><a class="row" href="salon/index.html"><span><span class="name">Salon, barber and spa</span><br><span class="for">Hair, nails, barbershops and massage</span></span><span class="open">Open sample</span></a></li>
+    <li><a class="row" href="cafe/index.html"><span><span class="name">Cafe and bakery</span><br><span class="for">Cafes, restaurants, bakeries and lechon houses</span></span><span class="open">Open sample</span></a></li>
+    <li><a class="row" href="stay/index.html"><span><span class="name">Homestay and tours</span><br><span class="for">Resorts, homestays, hostels, dive shops and tour operators</span></span><span class="open">Open sample</span></a></li>
+    <li><a class="row" href="shop/index.html"><span><span class="name">Local shop</span><br><span class="for">Florists, bike and auto shops, woodcraft and print shops</span></span><span class="open">Open sample</span></a></li>
+  </ul>
+  <small>Each page has a "REPLACE BEFORE SHOWING" comment at the top of its HTML listing what to change. The banner at the top of each sample still says [Your Name].</small>
+</main>
+</body>
+</html>
